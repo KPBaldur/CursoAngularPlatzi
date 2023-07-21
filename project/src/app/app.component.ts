@@ -26,6 +26,11 @@ export class AppComponent {
   movies: string[]= ['Avatar 2', 'Sonic', 'Mario Bross'];
   newMovie = '';
 
+  box = {
+    width: 100,
+    height: 100,
+    background: 'red'
+  };
 
   products: Product[] = [
     {
