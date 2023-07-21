@@ -1,8 +1,86 @@
+<h1>*ngSwitch</h1>
+<input type="text" required [(ngModel)]="person.name"   />
+<div [ngSwitch]="person.name">
+  <p *ngSwitchCase="'nicolas'">
+    La persona es nicolas
+  </p>
+  <p *ngSwitchCase="'Kevin'">
+    La persona es Kevin
+  </p>
+  <p *ngSwitchCase="'Naomy'">
+    La persona es Naomy
+  </p>
+  <p *ngSwitchDefault>No hace match</p>
+</div>
+
+<!--<p *ngIf="person.name === 'nicolas'">
+  La persona es nicolas
+</p>
+
+<p *ngIf="person.name === 'Kevin'">
+  La persona es Kevin
+</p>
+
+<p *ngIf="person.name === 'Naomy'">
+  La persona es Naomy
+</p>
+-->
 
 
+<hr>
+<h1>*ngFor Objs</h1>
+<div>
+  <div *ngFor="let product of products">
+    <img width="250" [src]="product.image" alt="image">
+    <h2>{{ product.price }}</h2>
+    <p>{{ product.name}} </p>
+  </div>
+</div>
 
 
+<hr>
+<h1>Practica de lista de Array</h1>
+<input type="text" required [(ngModel)]="newMovie">
+<button (click)="addMovie()">Add Movie</button>
+<ul>
+  <li *ngIf="movies.length === 0">No hay Peliculas</li>
+  <li *ngFor="let movie of movies; index as i">
+    {{i}} {{ movie }}
+    <button (click)="deleteMovie(i)">Delete Movie</button>
+  </li>
+</ul>
 
+<hr>
+<h1>*ngFor</h1>
+<input type="text" required [(ngModel)]="newName">
+<button (click)="addName()">Add name</button>
+<ul>
+  <li *ngIf="names.length === 0">No hay nombres</li>
+  <li *ngFor="let name of names; index as i">
+    {{i}} {{ name }}
+    <button (click)="deleteName(i)">Delete</button>
+  </li>
+</ul>
+
+<hr>
+<h1>ngIf</h1>
+<input type="text" required [(ngModel)]="person.name">
+<p *ngIf="person.name === 'Naomy'">Soy Naomy</p>
+<p *ngIf="person.name === 'Kevin' && person.age === 30; else elseBlock">Soy Kevin</p>
+<ng-template #elseBlock>
+  <p>Bloque de else</p>
+</ng-template>
+
+<hr>
+<h1>NgModel</h1>
+<p> Nombre {{ person.name}}</p>
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name">
+<p>Valid : {{ nameInput.valid }}</p>
+<input type="number" max="18"  min="10" required #ageInput="ngModel" [(ngModel)]="person.age">
+<p> Nombre {{ person.age}}</p>
+<p>Valid : {{ ageInput.valid }}</p>
+
+<hr>
 <h1>Eventos</h1>
 <button [disabled]="btnDisable">Enviar</button>
 <button (click)="toogleButton()">Activar boton</button>
