@@ -13,6 +13,14 @@ export class AppComponent {
   age = 22;
   img = 'https://i.pinimg.com/564x/ca/18/26/ca1826f90cd5430344563ff4bf6010c7.jpg'
   btnDisable = true ;
+
+  register = {
+    name: '',
+    email: '',
+    password: '',
+  }
+
+
   person = {
     name: 'Naomy',
     age: 29,
@@ -103,5 +111,10 @@ export class AppComponent {
 
   deleteMovie(index: number){
     this.movies.splice(index, 1);
+  }
+
+
+  onRegister(){
+    console.log(this.register);
   }
 }
