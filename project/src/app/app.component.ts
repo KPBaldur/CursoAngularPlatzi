@@ -8,10 +8,17 @@ import { Product } from './product.model'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  /*##################################################*/
+  /*-------------- 01 STRING INTERPOLATION -------------*/
   widthImg= 10;
-  name = 'Kevin';
-  age = 22;
+  name1 = 'Kevin';
+  age1 = 22;
   img = 'https://i.pinimg.com/564x/ca/18/26/ca1826f90cd5430344563ff4bf6010c7.jpg'
+
+
+  /*##################################################*/
+  /*-------------- 02 PROPERTY BINDING -------------*/
+
   btnDisable = true ;
 
   register = {
