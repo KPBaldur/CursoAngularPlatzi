@@ -18,8 +18,8 @@ export class AppComponent {
 
   /*##################################################*/
   /*-------------- 02 PROPERTY BINDING -------------*/
-
   btnDisable = true ;
+
 
   register = {
     name: '',
@@ -124,4 +124,7 @@ export class AppComponent {
   onRegister(){
     console.log(this.register);
   }
+
+
+  imgParent = '';
 }
